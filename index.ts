@@ -93,7 +93,7 @@ class Mathematics implements objectExams {
   name: string;
   id!: number; // Definite assignment assertion for id
 
-  constructor() {
+  constructor(cid: number, name: string, id: number) {
       this.cid = 134;
       this.acid = 2353;
       this.name = "random";
@@ -106,12 +106,38 @@ class Mathematics implements objectExams {
   randomSum(): number {
       return this.cid + this.acid;
   }
+  randomMinus(cid:number,acid:number): number {
+    return  acid - cid
+  }
 }
 
-const mathObject = new Mathematics();
+class mathematician extends Mathematics{
+  profile : string;
+ constructor(id:number,profile:string,acid:number ,name:string){
+  super(cid,name,acid);
+  this.name=name
+  this.profile = profile;
+
+ }
+ msg ():void {
+
+  console.log(`msg:${this.name} is high profile at ${this.profile}` );
+  
+
+}
+}
+
+
+
+const mathObject = new Mathematics(10,'lily',234);
+const math = new mathematician(13,'Ms.c',13,"jasmine");
+console.log(math.msg());
+
 console.log(mathObject.cid); // Output: 134
 console.log(mathObject.name); // Output: "random"
 mathObject.msg(); // Output: "Hello math student"
 
 mathObject.id = 10; // Assign a value to the id property
 console.log(mathObject.randomSum()); // Output: 2363 (134 + 2353)
+console.log(mathObject.randomMinus(23, 5)); 
+
