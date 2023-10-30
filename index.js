@@ -108,3 +108,10 @@ mathObject.msg(); // Output: "Hello math student"
 mathObject.id = 10; // Assign a value to the id property
 console.log(mathObject.randomSum()); // Output: 2363 (134 + 2353)
 console.log(mathObject.randomMinus(23, 5));
+// ----------------------------------------------
+// Generics --------------------------------
+function generate(talker) {
+    return talker;
+}
+var generate_name = generate('shally');
+console.log(generate_name);

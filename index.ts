@@ -127,8 +127,6 @@ class mathematician extends Mathematics{
 }
 }
 
-
-
 const mathObject = new Mathematics(10,'lily',234);
 const math = new mathematician(13,'Ms.c',13,"jasmine");
 console.log(math.msg());
@@ -141,3 +139,12 @@ mathObject.id = 10; // Assign a value to the id property
 console.log(mathObject.randomSum()); // Output: 2363 (134 + 2353)
 console.log(mathObject.randomMinus(23, 5)); 
 
+// ----------------------------------------------
+// Generics --------------------------------
+function generate <T> (talker:T):T { 
+
+	return talker;
+}
+
+let generate_name= generate('shally');
+console.log(generate_name);
